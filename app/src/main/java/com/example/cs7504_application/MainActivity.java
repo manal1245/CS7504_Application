@@ -3,6 +3,7 @@ package com.example.cs7504_application;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -13,7 +14,8 @@ public class MainActivity extends AppCompatActivity {
     EditText number1, number2;
     Button Add, Subtraction, multiply, divide;
 
-
+    float result_num;
+    int num1, num2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,5 +30,26 @@ public class MainActivity extends AppCompatActivity {
         Subtraction = (Button)findViewById(R.id.Subtraction);
         multiply = (Button)findViewById(R.id.multiply);
         divide = (Button)findViewById(R.id.divide);
+
+        Add.setOnClickListener (new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+
+                num1 = Integer.parseInt(number1.getText().toString());
+                num2 = Integer.parseInt(number2.getText().toString());
+                result_num = num1 + num2;
+                result.setText(String.valueOf(result_num));
+            }
+        });
+        Subtraction.setOnClickListener (new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+
+                num1 = Integer.parseInt(number1.getText().toString());
+                num2 = Integer.parseInt(number2.getText().toString());
+                result_num = num1 - num2;
+                result.setText(String.valueOf(result_num));
+            }
+        });
     }
 }
