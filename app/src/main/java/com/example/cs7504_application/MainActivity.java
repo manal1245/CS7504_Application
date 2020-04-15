@@ -51,5 +51,25 @@ public class MainActivity extends AppCompatActivity {
                 result.setText(String.valueOf(result_num));
             }
         });
+        multiply.setOnClickListener (new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+
+                num1 = Integer.parseInt(number1.getText().toString());
+                num2 = Integer.parseInt(number2.getText().toString());
+                result_num = num1 * num2;
+                result.setText(String.valueOf(result_num));
+            }
+        });
+        divide.setOnClickListener (new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+
+                num1 = Integer.parseInt(number1.getText().toString());
+                num2 = Integer.parseInt(number2.getText().toString());
+                result_num = num1 / num2;
+                result.setText(String.valueOf(result_num));
+            }
+        });
     }
 }
